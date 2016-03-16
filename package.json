@@ -1,12 +1,11 @@
 {
-  "name": "alarm-clock-js",
+  "name": "pdxbreweries",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Yvonna Contreras & Jared Beckler",
   "license": "ISC",
   "dependencies": {
     "prompt": "^1.0.0"
@@ -25,5 +24,14 @@
     "gulp-util": "^3.0.7",
     "jshint": "^2.9.1",
     "vinyl-source-stream": "^1.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaredbeckler/js-bower-gulp-skele.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jaredbeckler/js-bower-gulp-skele/issues"
+  },
+  "homepage": "https://github.com/jaredbeckler/js-bower-gulp-skele#readme",
+  "description": ""
 }

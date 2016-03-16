@@ -1,5 +1,0 @@
-// var ??? = require('./../js/???.js').???;
-
-$(document).ready(function(){
-
-});
