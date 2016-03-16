@@ -1,13 +1,10 @@
-$gray : #d3d3d3;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-.box {
-  background: $gray;
-  border: 3px solid black;
-  padding: 40px 80px;
-  .button {
-    font-weight: bold;
-    text-align: center;
-    background: red;
-    color: white;
-  }
+#map {
+  height: 500px;
+  width: 500px;
 }
