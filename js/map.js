@@ -43,8 +43,7 @@ exports.initMap = function() {
       };
 
       // Create a marker for each place.
-      var marker = undefined;
-      marker = new google.maps.Marker({
+      var marker = new google.maps.Marker({
         map: map,
         animation: google.maps.Animation.DROP,
         title: place.name,
@@ -58,8 +57,15 @@ exports.initMap = function() {
         bounds.extend(place.geometry.location);
       }
 
+        var contentInfo = '<div id="content">' +
+                      '<div id="bodyContent">' + '<strong>' + place.name + '</strong>' +
+                      '<p>' + place.formatted_address + '</p>' +
+                      '<p>Rating:  ' + place.rating + ' / 5</p>' +
+                      '</div>' +
+                      '</div>';
+
         var infoWindow = new google.maps.InfoWindow({
-          content: place.formatted_address
+          content: contentInfo
         });
 
         marker.addListener('click', function() {
