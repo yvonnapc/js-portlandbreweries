@@ -20,7 +20,6 @@ exports.initMap = function() {
   // more details for that place.
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
-
     if (places.length === 0) {
       return;
     }
@@ -33,6 +32,7 @@ exports.initMap = function() {
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
+
     places.forEach(function(place) {
       var icon = {
         url: place.icon,
@@ -43,13 +43,13 @@ exports.initMap = function() {
       };
 
       // Create a marker for each place.
-
-      markers.push(new google.maps.Marker({
+      var marker = undefined;
+      marker = new google.maps.Marker({
         map: map,
         animation: google.maps.Animation.DROP,
         title: place.name,
         position: place.geometry.location
-      }));
+      });
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -58,15 +58,15 @@ exports.initMap = function() {
         bounds.extend(place.geometry.location);
       }
 
-      markers.forEach(function(marker) {
-        var infowindow = new google.maps.InfoWindow({
+        var infoWindow = new google.maps.InfoWindow({
           content: place.formatted_address
         });
 
         marker.addListener('click', function() {
-          infowindow.open(map, marker);
+          infoWindow.open(map, marker);
         });
-      });
+
+        markers.push(marker);
     });
     map.fitBounds(bounds);
   });
