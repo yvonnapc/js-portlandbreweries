@@ -61,11 +61,20 @@ exports.initMap = function() {
                       '<div id="bodyContent">' + '<strong>' + place.name + '</strong>' +
                       '<p>' + place.formatted_address + '</p>' +
                       '<p>Rating:  ' + place.rating + ' / 5</p>' +
+                      '<button id="addToList">Add To List</button>' +
                       '</div>' +
                       '</div>';
 
         var infoWindow = new google.maps.InfoWindow({
           content: contentInfo
+        });
+
+
+              google.maps.event.addListener(infoWindow, 'domready', function() {
+                document.getElementById("addToList").addEventListener("click", function() {
+                  $('#userList').append("<li><strong>" + place.name + "</strong></li>"+
+                                        "<ul><li>" + place.formatted_address + "</li></ul>");
+          });
         });
 
         marker.addListener('click', function() {
