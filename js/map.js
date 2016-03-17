@@ -72,8 +72,9 @@ exports.initMap = function() {
 
               google.maps.event.addListener(infoWindow, 'domready', function() {
                 document.getElementById("addToList").addEventListener("click", function() {
-                  $('#userList').append("<li><strong>" + place.name + "</strong></li>"+
+                  $('#results').append("<li><strong>" + place.name + "</strong></li>" +
                                         "<ul><li>" + place.formatted_address + "</li></ul>");
+                                        console.log(place);
           });
         });
 
