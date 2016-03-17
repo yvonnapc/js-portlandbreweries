@@ -58,12 +58,6 @@ exports.initMap = function() {
         bounds.extend(place.geometry.location);
       }
 
-      // var contentString = infowindow.setContent('<span style="padding: 0px; text-align:left" align="left"><h5>' + place.name + '&nbsp; &nbsp; ' + place.rating + '</h5><p>' + place.formatted_address + '<br />' + place.formatted_phone_number + '<br />' + '<a  target="_blank" href=' + place.website + '>' + place.website + '</a></p>');
-
-      // var infowindow = new google.maps.InfoWindow({
-      //   content: contentString
-      // });
-
       markers.forEach(function(marker) {
         var infowindow = new google.maps.InfoWindow({
           content: place.formatted_address
@@ -76,25 +70,4 @@ exports.initMap = function() {
     });
     map.fitBounds(bounds);
   });
-
-  // var contentString = infowindow.setContent('<span style="padding: 0px; text-align:left" align="left"><h5>' + place.name + '&nbsp; &nbsp; ' + place.rating + '</h5><p>' + place.formatted_address + '<br />' + place.formatted_phone_number + '<br />' + '<a  target="_blank" href=' + place.website + '>' + place.website + '</a></p>');
-  //
-  //
-  // // var infowindow = new google.maps.InfoWindow({
-  // //   content: contentString
-  // // });
-  //
-  // function addInfoWindow(marker, content) {
-  //   var infowindow = new google.maps.InfoWindow({
-  //       content: contentString
-  //   });
-  // };
-  //
-  //
-  // foreach(marker in markers){
-  //   marker.addInfoWindow();
-  //   marker.addListener('click', function() {
-  //     infowindow.open(map, marker);
-  //   });
-  // }
 };
